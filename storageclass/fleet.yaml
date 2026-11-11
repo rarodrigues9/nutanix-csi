@@ -1,0 +1,6 @@
+labels:
+  app: nutanix-csi-storageclass
+dependsOn:
+- selector:
+    matchLabels:
+      app: nutanix-csi-storage
