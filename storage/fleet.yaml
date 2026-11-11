@@ -17,7 +17,6 @@ helm:
     authType: "service-auth"
     ntnxInitConfigMap:
       usePC: true
-    # Ajuste storage class conforme sua doc 3.8:
     volumeClassName: nutanix-volume
     storageContainer: "Container-Padrao"
     fsType: xfs
