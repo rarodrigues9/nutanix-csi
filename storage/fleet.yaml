@@ -1,0 +1,23 @@
+defaultNamespace: ntnx-system
+labels:
+  app: nutanix-csi-storage
+dependsOn:
+- selector:
+    matchLabels:
+      app: nutanix-csi-snapshot
+helm:
+  repo: https://nutanix.github.io/helm-releases/
+  chart: nutanix-csi-storage
+  version: "3.9.0"
+  releaseName: nutanix-csi
+  values:
+    createPrismCentralSecret: false
+    pcSecretName: ntnx-pc-secret
+    createSecret: false
+    ntnxInitConfigMap:
+      usePC: true
+    # Ajuste storage class conforme sua doc 3.8:
+    volumeClassName: nutanix-volume
+    storageContainer: "Container-Padrao"
+    fsType: xfs
+    defaultStorageClass: none

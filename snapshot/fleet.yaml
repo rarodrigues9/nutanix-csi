@@ -1,0 +1,12 @@
+defaultNamespace: ntnx-system
+labels:
+  app: nutanix-csi-snapshot
+helm:
+  repo: https://nutanix.github.io/helm-releases/
+  chart: nutanix-csi-snapshot
+  version: "8.3.0"
+  releaseName: nutanix-csi-snapshot
+  takeOwnership: true
+  values:
+    tls:
+      renew: true
